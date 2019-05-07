@@ -1,0 +1,20 @@
+#bootstrap.yml
+#排除
+spring:
+  cloud:
+    inetutils:
+      ignored-interfaces:
+      - VM.*
+      #根据指定ip网段的网卡
+      #preferred-networks:      # - 192.168
+  config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: user-service
+      profile: dev
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
